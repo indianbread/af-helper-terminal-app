@@ -1,6 +1,8 @@
 require 'tty-prompt'
-require_relative 'chadsvasccalc.rb'
 require 'CSV'
+require_relative 'chadsvasccalc.rb'
+require_relative 'resultviewer.rb'
+
 
 puts "Hi Doc! I am your cardiovascular companion, the atrial fibrillation helper!\nSelect from the following options below:"
 continue = "y"
@@ -14,6 +16,8 @@ while continue == "y"
            chadsvascscore = chadsvasccalc.to_i
            chadsvasceval(chadsvascscore)
         elsif selection == 2
+        "Enter the patient's name to view results"
+        patientname = gets.strip.downcase
         elsif selection == 3
         exit
         else
