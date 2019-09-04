@@ -1,10 +1,7 @@
-# frozen_string_literal: true
-
 require 'tty-prompt'
 require 'CSV'
 require 'Date'
 require 'colorize'
-require_relative 'cvresult.csv'
 
 def chadsvasccalc
   prompt = TTY::Prompt.new
@@ -58,7 +55,8 @@ def chadsvasccalc
               hypertension: hypertension,
               stroke: stroke,
               vascular: vascular,
-              diabetes: diabetes }
+              diabetes: diabetes,
+              cvscore: cvscore }
   result_array << result
 
   CSV.open('cvresult.csv', 'a') do |csv|
