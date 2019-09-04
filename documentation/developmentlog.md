@@ -17,7 +17,11 @@ At this stage I most likely will implement the latter once I figure out how to p
 I have succesfully completed the results viewer.
 As one of the criteria for the terminal app is to be able to utilize a command line argument, I will most likely implement this feature by allowing the end user to add a medication using this method rather than calling a method within the actual application. 
 
-Update: Unfortunately, I am unable to implement ARGV for adding a medication as it requires calling an instance of the patient class which I am unable to do as I don't know how to and not sure that it is possible.
+Update: Unfortunately, I am unable to implement ARGV for adding a medication as it requires calling an instance of the patient class which I am unable to do as I don't know how to and not sure that it is possible. I used ARGV to implement an on-the-fly note feature which displays the note face up when the user logs in to the application.
+
+I also utilised the Patient class by adding an add medication method, but due to time constraints I have not made the updated Patient objects write to a CSV so for now the drug added is not stored in a record.
+
+Some cosmetic changes such as fonts and tables have been implemented to improve the user experience.
 
 
 
