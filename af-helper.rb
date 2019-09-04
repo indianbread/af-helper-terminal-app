@@ -50,9 +50,18 @@ while continue == "y"
             puts "Medication has been added to patient's record".colorize(:blue).colorize( :background => :white)
             puts
             patient.viewresult
-            
 
         elsif selection == 5
+            notes_log = []
+            def add_notes(notes_log) 
+            notes_log << ARGV[0]
+            end 
+            
+            add_notes(notes_log)
+
+            
+
+        elsif selection == 6
         exit
         else
             puts 'Invalid selection!'  
