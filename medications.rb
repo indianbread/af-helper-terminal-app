@@ -8,7 +8,7 @@ headers = []
 drug_content = []
 
 File.open("druglist.csv","r").each_with_index do |line,index|
-    if line.length > 0 #Ensure that the line is not empty
+    if line.length > 0 
         if index == 0
             sub_arr = line.split(",")
             sub_arr.each do |field|

@@ -1,83 +1,82 @@
+# frozen_string_literal: true
+
 require 'tty-prompt'
 require 'CSV'
 require 'tty-font'
 require 'colorize'
-require 'terminal-table'
+# require 'terminal-table'
 require_relative 'chadsvasccalc.rb'
 require_relative 'resultviewer.rb'
 require_relative 'medications.rb'
 require_relative 'patient-class.rb'
 
 font = TTY::Font.new(:standard)
+begin
+puts font.write('AF-Helper')
 
-puts font.write("AF-Helper")
-
-puts "Hi Doc! I am your cardiovascular companion, the atrial fibrillation helper!".colorize(:black ).colorize( :background => :yellow)
+puts 'Hi Doc! I am your cardiovascular companion, the atrial fibrillation helper!'.colorize(:black).colorize(background: :yellow)
 puts "\r\r"
 notes_log = []
 def add_notes(notes_log)
-    notes_log << ARGV
+  notes_log << ARGV
     end
 
 add_notes(notes_log)
 
-table = Terminal::Table.new :title => "On-The-Fly Notes:", :rows => notes_log
+table = Terminal::Table.new title: 'On-The-Fly Notes:', rows: notes_log
 puts table
 puts "\r\r"
-puts "Select from the following options below:"
+puts 'Select from the following options below:'
 # continue = "y"
 
 # while continue == "y"
 loop do
-    begin
-        puts "1. CHADS-VASc calculator"
-        puts "2. View CHADS-VASc results for a patient"
-        puts "3. View anticoagulant drug list"
-        puts "4. Add an anticoagulant medication for patient"
-        puts "5. Exit"
-        puts
-        print ">" 
-        selection = STDIN.gets.chomp.to_i
-        system('clear')
+    puts '1. CHADS-VASc calculator'
+    puts '2. View CHADS-VASc results for a patient'
+    puts '3. View anticoagulant drug list'
+    puts '4. Add an anticoagulant medication for patient'
+    puts '5. Exit'
+    puts
+    print '>'
+    selection = STDIN.gets.chomp.to_i
+    system('clear')
 
-        if selection == 1
-           chadsvascscore = chadsvasccalc.to_i
-           chadsvasceval(chadsvascscore)
+    if selection == 1
+      chadsvascscore = chadsvasccalc.to_i
+      chadsvasceval(chadsvascscore)
 
-        elsif selection == 2
-        puts "Enter the patient's name to view results"
-            patientname = STDIN.gets.chomp.downcase
-            resultviewer(patientname)
+    elsif selection == 2
+      puts "Enter the patient's name to view results"
+      patientname = STDIN.gets.chomp.downcase
+      resultviewer(patientname)
 
-        elsif selection == 3
-            druglist
+    elsif selection == 3
+      druglist
 
-        elsif selection == 4
-            puts "Enter patient name"
-            patientname = gets.strip.downcase
-            patient = loadpatient(patientname)
-            puts "Enter drug and dose"
-            medication = STDIN.gets.chomp
-            patient.medication=(medication)
-            puts "Medication has been added to patient's record".colorize(:blue).colorize( :background => :white)
-            puts
-            patient.viewresult
+    elsif selection == 4
+      puts 'Enter patient name'
+      patientname = gets.strip.downcase
+      patient = loadpatient(patientname)
+      puts 'Enter drug and dose'
+      medication = STDIN.gets.chomp
+      patient.medication = medication
+      puts "Medication has been added to patient's record".colorize(:blue).colorize(background: :white)
+      puts
+      patient.viewresult
 
-        elsif selection == 5
-        exit
-        else
-            puts 'Invalid selection!'  
-        end
-        puts "\nPress Y to continue or any other key to exit"
-        continue = STDIN.gets.chomp.downcase
-            if continue == "y"
-            system('clear')
-            else
-            break
-            end
-    rescue => error_object
-        puts "Something went wrong! Return to menu? Y/N"
-        continue = STDIN.gets.chomp.downcase
+    elsif selection == 5
+      exit
+    else
+      puts 'Invalid selection!'
     end
+    puts "\nPress Y to continue or any other key to exit"
+    continue = STDIN.gets.chomp.downcase
+    if continue == 'y'
+      system('clear')
+    else
+      break
+      end
+  rescue => e
+    puts 'Something went wrong! This program will terminate. Please contact helpdesk for advice.'
+  end
 end
-

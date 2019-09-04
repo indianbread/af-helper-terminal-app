@@ -2,3 +2,4 @@ Result_Id,Date,Name,Age_Range,Gender,CHF,Hypertension,Stroke_History,Vascular_Di
 1,2019-09-04 11:37:20 +1000,ali wong,65-74,Female,false,true,false,false,true,4
 1,2019-09-04 11:40:45 +1000,john candy,>75,Male,true,false,true,false,true,6
 1,2019-09-04 21:30:57 +1000,han,<65,Male,false,false,false,true,true,2
+1,2019-09-04 23:26:16 +1000,macy gray,<65,Female,false,true,true,false,false,4
