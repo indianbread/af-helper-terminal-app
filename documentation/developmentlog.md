@@ -13,6 +13,9 @@ I am still undecided on two options:
 
 At this stage I most likely will implement the latter once I figure out how to parse the drug file CSV (not yet started) into an array.
 
+#Wednesday 4th September, 2019 #
+I have succesfully completed the results viewer.
+As one of the criteria for the terminal app is to be able to utilize a command line argument, I will most likely implement this feature by allowing the end user to add a medication using this method rather than calling a method within the actual application. 
 
 
 

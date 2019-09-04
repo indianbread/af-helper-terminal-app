@@ -31,6 +31,14 @@ class Patient
     puts "Vascular Disease History: #{@vascular}"
     puts "Diabetes History: #{@diabetes}"
     puts "CHADS-VASc Score: #{@cvscore}"
-    puts "Anticoagulant Medication: #{@medication}"
+    puts "Anticoagulant Medication: #{@medication.to_s}"
+end
+
+def viewmed(patientname)
+    if @medication.length == 0
+        puts "Patient is not taking any anticoagulants"
+    else
+        puts @medication.to_s
+    end
 end
 end
