@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'Date'
+require_relative 'resultviewer.rb'
 
 class Patient
   attr_accessor :medication
@@ -16,7 +17,7 @@ class Patient
     @vascular = vascular
     @diabetes = diabetes
     @cvscore = cvscore
-    @medication = nil
+    @medication = []
     @@instance_count += 1
   end
 
@@ -31,14 +32,18 @@ class Patient
     puts "Vascular Disease History: #{@vascular}"
     puts "Diabetes History: #{@diabetes}"
     puts "CHADS-VASc Score: #{@cvscore}"
-    puts "Anticoagulant Medication: #{@medication.to_s}"
+    puts "Anticoagulant Medication: #{@medication.to_s}".colorize(:black ).colorize( :background => :yellow)
 end
 
-def viewmed(patientname)
-    if @medication.length == 0
-        puts "Patient is not taking any anticoagulants"
-    else
-        puts @medication.to_s
-    end
+def medication=(medication)
+    @medication << medication
+    return @medication
 end
+
+def medication
+    @medication
 end
+
+end
+
+

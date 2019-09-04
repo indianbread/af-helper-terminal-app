@@ -4,6 +4,8 @@ require 'tty-font'
 require 'colorize'
 require_relative 'chadsvasccalc.rb'
 require_relative 'resultviewer.rb'
+require_relative 'medications.rb'
+require_relative 'patient-class.rb'
 
 font = TTY::Font.new(:standard)
 
@@ -17,8 +19,10 @@ while continue == "y"
     # begin
         puts "1. CHADS-VASc calculator"
         puts "2. View CHADS-VASc results for a patient"
-        puts "3. Select an anticoagulant drug to prescribe"
-        puts "4. Exit"
+        puts "3. View anticoagulant drug list"
+        puts "4. Add an anticoagulant medication for patient"
+        puts "5. View on-the-fly notes"
+        puts "6. Exit"
         puts
         print ">" 
         selection = gets.strip.to_i
@@ -34,9 +38,21 @@ while continue == "y"
             resultviewer(patientname)
 
         elsif selection == 3
-            puts "These are the recommended first line oral agents for anticoagulation. There is no preference as to which one is to be trialed first."
+            druglist
 
         elsif selection == 4
+            puts "Enter patient name"
+            patientname = gets.strip.downcase
+            patient = loadpatient(patientname)
+            puts "Enter drug and dose"
+            medication = gets.strip
+            patient.medication=(medication)
+            puts "Medication has been added to patient's record".colorize(:blue).colorize( :background => :white)
+            puts
+            patient.viewresult
+            
+
+        elsif selection == 5
         exit
         else
             puts 'Invalid selection!'  
