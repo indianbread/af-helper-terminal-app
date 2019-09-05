@@ -10,6 +10,7 @@ def loadpatient(patientname)
   csv.each do |row|
     row_data = row.to_hash
     next unless row_data['Name'] == patientname
+
     date = row_data['Date']
     patientname = row_data['Name'].capitalize
     agegroup = row_data['Age_Range']
@@ -28,10 +29,10 @@ end
 
 def resultviewer(patientname)
   patient = loadpatient(patientname)
-  if patient == nil
-      puts "Patient not found."
-    else
-  patient.viewresult
-  puts "---------------------End of result----------------"
+  if patient.nil?
+    puts 'Patient not found.'
+  else
+    patient.viewresult
+    puts '---------------------End of result----------------'
 end
 end

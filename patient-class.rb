@@ -4,9 +4,7 @@ require 'Date'
 require_relative 'resultviewer.rb'
 
 class Patient
-  attr_accessor :medication
-  @@instance_count = 0
-  def initialize(date,patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore)
+  def initialize(date, patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore)
     @date = date
     @patientname = patientname
     @agegroup = agegroup
@@ -18,7 +16,6 @@ class Patient
     @diabetes = diabetes
     @cvscore = cvscore
     @medication = []
-    @@instance_count += 1
   end
 
   def viewresult
@@ -32,18 +29,11 @@ class Patient
     puts "Vascular Disease History: #{@vascular}"
     puts "Diabetes History: #{@diabetes}"
     puts "CHADS-VASc Score: #{@cvscore}"
-    puts "Anticoagulant Medication: #{@medication.to_s}".colorize(:black ).colorize( :background => :yellow)
+    puts "Anticoagulant Medication: #{@medication}".colorize(:black).colorize(background: :yellow)
 end
 
-def medication=(medication)
+  def medication=(medication)
     @medication << medication
-    return @medication
-end
-
-def medication
     @medication
+  end
 end
-
-end
-
-

@@ -81,7 +81,7 @@ loop do
     else
       break
       end
-  rescue => e
+  rescue => error_object
     puts 'Something went wrong! This program will terminate. Please contact helpdesk for advice.'.colorize(:red).colorize(background: :white)
     break
   end
