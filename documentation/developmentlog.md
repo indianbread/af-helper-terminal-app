@@ -23,5 +23,11 @@ I also utilised the Patient class by adding an add medication method, but due to
 
 Some cosmetic changes such as fonts and tables have been implemented to improve the user experience.
 
+# Thursday 5th September, 2019 #
+Today I have spent the majority of the time on implementing the error handling and fixing bugs.
+Initially I had put a rescue section in each different files, but decided to remove them from the files containing the methods and just include a single rescue in the master af-helper.rb file where all the methods are called from.
+I was mindful of including different error messages for the different scenarios, e.g. CSV not available, invalid selection/user input rather than relying on the rescue message to handle all the different types of errors.
+Some of the bugs were identified as I was executing the manual testing plan. I picked up another error when briefly testing the add medication method but due to time constraints I will not address this error yet. I may go back to the code and fix this error after I complete the required documentation components.
+
 
 

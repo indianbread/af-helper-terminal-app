@@ -12,7 +12,7 @@ require_relative 'medications.rb'
 require_relative 'patient-class.rb'
 
 font = TTY::Font.new(:standard)
-begin
+
 puts font.write('AF-Helper')
 
 puts 'Hi Doc! I am your cardiovascular companion, the atrial fibrillation helper!'.colorize(:black).colorize(background: :yellow)
@@ -28,7 +28,7 @@ table = Terminal::Table.new title: 'On-The-Fly Notes:', rows: notes_log
 puts table
 puts "\r\r"
 puts 'Select from the following options below:'
-
+begin
 loop do
     puts '1. CHADS-VASc calculator'
     puts '2. View CHADS-VASc results for a patient'
