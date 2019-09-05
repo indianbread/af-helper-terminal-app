@@ -2,9 +2,18 @@
 chmod +x ./build.sh
 # copy across files to distribution directory
 mkdir dist
-cp ./app.rb ./dist
-cp ./contacts.rb ./dist
-cp ./test.rb ./dist
+cp ./af-helper.rb ./dist
+cp ./chadsvasccalc.rb ./dist
+cp ./medications.rb ./dist
+cp ./resultviewer.rb ./dist
+cp ./patient-class.rb ./dist
+cp ./druglist.csv ./dist
+cp ./cvresult.csv ./dist
+
 # install all gems
-gem install letter_opener
-gem install colorize 
+gem install terminal-table
+gem install colorize
+gem install tty-prompt
+gem install tty-font
+
+# bash ./build.sh
