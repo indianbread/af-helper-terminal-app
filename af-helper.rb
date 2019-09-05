@@ -5,7 +5,7 @@ require 'CSV'
 require 'tty-font'
 require 'colorize'
 require 'terminal-table'
-require 'pry'
+# require 'pry'
 require_relative 'chadsvasccalc.rb'
 require_relative 'resultviewer.rb'
 require_relative 'medications.rb'
@@ -42,7 +42,7 @@ loop do
 
     if selection == 1
       chadsvascscore = chadsvasccalc.to_i
-      binding.pry
+      # binding.pry
       chadsvasceval(chadsvascscore)
 
     elsif selection == 2
@@ -55,7 +55,7 @@ loop do
 
     elsif selection == 4
       puts 'Enter patient name'
-      patientname = gets.strip.downcase
+      patientname = STDIN.gets.chomp.downcase
       patient = loadpatient(patientname)
       puts 'Enter drug and dose'
       medication = STDIN.gets.chomp

@@ -2,11 +2,11 @@ require 'tty-prompt'
 require 'CSV'
 require 'Date'
 require 'colorize'
-require 'pry'
+# require 'pry'
 
 def chadsvasccalc
   prompt = TTY::Prompt.new
-  fileok = File.exist?('cvresult2.csv')
+  fileok = File.exist?('cvresult.csv')
   if fileok == false
     fileok = prompt.yes?('Error: Unable to save results. Continue anyway?'.colorize(:red).colorize(background: :white))
   end
