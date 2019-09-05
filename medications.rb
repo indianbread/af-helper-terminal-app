@@ -27,7 +27,7 @@ def druglist
 
   table = Terminal::Table.new headings: headers, rows: drug_content
 
-  puts 'These are the recommended first line oral agents for anticoagulation.'
+  puts 'These are the recommended first line oral agents for anticoagulation.'.colorize(:blue).colorize(background: :white)
   puts 'There is no preference as to which one is to be trialed first.'.colorize(:blue).colorize(background: :white)
   puts
   puts table
