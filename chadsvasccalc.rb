@@ -2,9 +2,17 @@ require 'tty-prompt'
 require 'CSV'
 require 'Date'
 require 'colorize'
+require 'pry'
 
 def chadsvasccalc
   prompt = TTY::Prompt.new
+  fileok = File.exist?('cvresult2.csv')
+  if fileok == false
+    fileok = prompt.yes?('Error: Unable to save results. Continue anyway?'.colorize(:red).colorize(background: :white))
+  end
+  if fileok == false
+    cvscore = nil
+  else
   result_id = 0
   date = DateTime.now.strftime('%Y-%m-%d %H:%M:%S %z')
   result_array = []
@@ -64,10 +72,11 @@ def chadsvasccalc
       csv << hash.values
     end
   end
-
   puts "The CHADS-VASc score is #{cvscore}."
   cvscore
 end
+end
+
 
 def chadsvasceval(chadsvascscore)
   if chadsvascscore == 0

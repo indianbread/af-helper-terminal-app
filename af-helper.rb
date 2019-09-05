@@ -4,7 +4,8 @@ require 'tty-prompt'
 require 'CSV'
 require 'tty-font'
 require 'colorize'
-# require 'terminal-table'
+require 'terminal-table'
+require 'pry'
 require_relative 'chadsvasccalc.rb'
 require_relative 'resultviewer.rb'
 require_relative 'medications.rb'
@@ -27,9 +28,7 @@ table = Terminal::Table.new title: 'On-The-Fly Notes:', rows: notes_log
 puts table
 puts "\r\r"
 puts 'Select from the following options below:'
-# continue = "y"
 
-# while continue == "y"
 loop do
     puts '1. CHADS-VASc calculator'
     puts '2. View CHADS-VASc results for a patient'
@@ -43,6 +42,7 @@ loop do
 
     if selection == 1
       chadsvascscore = chadsvasccalc.to_i
+      binding.pry
       chadsvasceval(chadsvascscore)
 
     elsif selection == 2
@@ -69,7 +69,7 @@ loop do
     else
       puts 'Invalid selection!'
     end
-    puts "\nPress Y to continue or any other key to exit"
+    puts "\nPress Y for main menu or any other key to exit"
     continue = STDIN.gets.chomp.downcase
     if continue == 'y'
       system('clear')
@@ -77,6 +77,7 @@ loop do
       break
       end
   rescue => e
-    puts 'Something went wrong! This program will terminate. Please contact helpdesk for advice.'
+    puts 'Something went wrong! This program will terminate. Please contact helpdesk for advice.'.colorize(:red).colorize(background: :white)
+    break
   end
 end

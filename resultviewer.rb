@@ -28,6 +28,10 @@ end
 
 def resultviewer(patientname)
   patient = loadpatient(patientname)
+  if patient == nil
+      puts "Patient not found."
+    else
   patient.viewresult
   puts "---------------------End of result----------------"
+end
 end
