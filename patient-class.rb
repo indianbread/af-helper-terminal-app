@@ -6,8 +6,8 @@ require_relative 'resultviewer.rb'
 class Patient
   attr_accessor :medication
   @@instance_count = 0
-  def initialize(patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore)
-    @date = DateTime.now.strftime('%Y-%m-%d %H:%M:%S %z')
+  def initialize(date,patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore)
+    @date = date
     @patientname = patientname
     @agegroup = agegroup
     @gender = gender

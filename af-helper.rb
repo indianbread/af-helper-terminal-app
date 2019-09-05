@@ -41,9 +41,12 @@ loop do
     system('clear')
 
     if selection == 1
-      chadsvascscore = chadsvasccalc.to_i
+      chadsvascscore = chadsvasccalc
       # binding.pry
+      if chadsvascscore != nil
       chadsvasceval(chadsvascscore)
+      else
+      end
 
     elsif selection == 2
       puts "Enter the patient's name to view results"
