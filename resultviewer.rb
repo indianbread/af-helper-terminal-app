@@ -10,7 +10,7 @@ def loadpatient(patientname)
   csv.each do |row|
     row_data = row.to_hash
     next unless row_data['Name'] == patientname
-
+    date = row_data['Date']
     patientname = row_data['Name'].capitalize
     agegroup = row_data['Age_Range']
     gender = row_data['Gender']
@@ -21,7 +21,7 @@ def loadpatient(patientname)
     diabetes = row_data['Diabetes_History']
     cvscore = row_data['CV_Score'].to_i
 
-    patient1 = Patient.new(patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore)
+    patient1 = Patient.new(date, patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore)
   end
   patient1
 end

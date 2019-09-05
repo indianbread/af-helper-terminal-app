@@ -22,7 +22,7 @@ class Patient
   end
 
   def viewresult
-    puts "Date: #{@date}"
+    puts "Date completed: #{@date}"
     puts "Patient Name: #{@patientname}"
     puts "Age Group: #{@agegroup}"
     puts "Gender: #{@gender}"
