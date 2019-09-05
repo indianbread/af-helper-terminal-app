@@ -1,4 +1,4 @@
-# AF-Helper #
+# **AF-Helper** #
 The atrial fibrillation helper application.
 
 ## T1A2-1 Statement of Purpose and Scope ##
@@ -23,11 +23,11 @@ The CHADS-VASc calculator will call two different methods - one to calculate the
 
 **Stroke risk evaluator:** By using if and else statements based on the CHADS-VASc score, the application will inform the user if the patient is at a low, medium or high risk of stroke.  If the risk is medium or high, the user will be asked if they would like to select an anticoagulant therapy for the patient.** 
 
-### Medication selector and record ###
-A list of medicines and doses will be displayed to the user. The user will then select the medication to initiate and store this information along with the patient's name, CHADS-VASc score and stroke risk. **  
-**View record**: Users can select from 2 submenus:**  
+### Medication selector and record ** ###
+A list of medicines and doses will be displayed to the user. The user will then select the medication to initiate and store this information along with the patient's name, CHADS-VASc score and stroke risk.   
+**View record**: Users can select from 2 submenus:  
 * View CHADS-VASc results for a patient  
-* View patient medication record **   
+* View patient medication record    
 
 This method will open the CSV that the CHADS-VASc results have been written to and parse the data. 
 This method is contained in the file resultviewer.rb.
@@ -66,20 +66,20 @@ The user is prompted to enter the patient's name followed by the medication to a
 ### On-the-fly-notes ### 
 A concise instruction on how to add on-the-fly notes has been included on the home screen to remind users how to add the notes and provide context. The notes are intended to be used as sticky notes or reminders (such as to remind the doctor to calculate a score for a particular patient) and will display face up to the user. The notes utilizes the ARGV functionality to enable the user to add them on-the-fly without having to open the AF-helper application. 
 
-# T1A2-5 Control Flow Diagram #
+## T1A2-5 Control Flow Diagram ##
 [PDF - Control Flow Diagram](./documentation/nhan-dang-T1A2-5-control-flow-diagram.pdf)
 ![JPEG - Control Flow Diagram](./documentation/nhan-dang-T1A2-5-control-flow-diagram.jpeg)
 
-# T1A2-6 Implementation Plan #
+## T1A2-6 Implementation Plan ##
 [Implementation Plan](./documentation/nhan-dang-T1A2—6-implementation-plan/xlsx)
 
-# T1A2-7 Implement Application #  
+## T1A2-7 Implement Application ##  
 Run application in Terminal: `ruby af-helper.rb`
 
-# T1A2-9 Style and Conventions #  
+## T1A2-9 Style and Conventions ##  
 Rubocop gem used for code styling and convention
 
-# TIA2-11 Help Me # 
+# **TIA2-11 Help File** # 
 
 ## Installation Steps ##
 
