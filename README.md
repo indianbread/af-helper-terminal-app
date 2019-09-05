@@ -45,11 +45,6 @@ The loadpatient method from the file resultviewer.rb is then called to open the 
 ** Denotes that the feature has not yet been implemented.
 
 ## T1A2-4 User Interaction and Experience ##
-Develop an outline of the user interaction and experience for the application.
-Your outline must include:
-- how the user will find out how to interact with / use each feature
-- how the user will interact with / use each feature
-- how errors will be handled by the application and displayed to the use
 
 ### Home screen and navigation ###
 The user will navigate to each feature from the menu on the home screen. Each menu item has numbered options and the user can navigate to the feature they would like to use by keying in the corresponding number. The last option will allow the user to exit the program. To prevent the application from terminating if the user makes an invalid selection, an else statement will be used to warn the user that the selection is invalid and loop back to the main menu. 
@@ -69,7 +64,94 @@ The gem Terminal-Table is used to display the list of drugs in a table format. T
 The user is prompted to enter the patient's name followed by the medication to add. The CHADS-VASc results and added medication will load to confirm to the user that the medication has been added.
 
 ### On-the-fly-notes ### 
-A concise instruction on how to add on-the-fly notes has been included on the home screen to remind users how to add the notes and provide context. The notes are intended to be used as sticky notes or reminders (such as to remind the doctor to calculate a score for a particular patient) and will display face up to the user. 
+A concise instruction on how to add on-the-fly notes has been included on the home screen to remind users how to add the notes and provide context. The notes are intended to be used as sticky notes or reminders (such as to remind the doctor to calculate a score for a particular patient) and will display face up to the user. The notes utilizes the ARGV functionality to enable the user to add them on-the-fly without having to open the AF-helper application. 
+
+# T1A2-5 Control Flow Diagram #
+[PDF - Control Flow Diagram](./documentation/nhan-dang-T1A2-5-control-flow-diagram.pdf)
+![JPEG - Control Flow Diagram](./documentation/nhan-dang-T1A2-5-control-flow-diagram.jpeg)
+
+# T1A2-6 Implementation Plan #
+[Implementation Plan](./documentation/nhan-dang-T1A2—6-implementation-plan/xlsx)
+
+# T1A2-7 Implement Application #  
+Run application in Terminal: `ruby af-helper.rb`
+
+# T1A2-9 Style and Conventions #  
+Rubocop gem used for code styling and convention
+
+# TIA2-11 Help Me # 
+
+## Installation Steps ##
+
+### MAC OS: ###
+1. Open Terminal
+2. In the command line, execute the build.sh file by typing `./build.sh`
+3. Run the AF-Helper application by typing `ruby af-helper.rb` in the command line
+
+## Dependencies ##
+Your computer must have the following installed:
+
+* [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+* [The following Ruby gems:](https://rubygems.org/) which are included in the build file
+    * Colorize
+    * Terminal-Table
+    * TTY-Prompt
+    * TTY-Font
+
+## Features ##
+
+### On-The-Fly Notes ###
+These notes can be added directly on the command line without opening the AF-Helper application itself.
+To add a note, type `ruby af-helper.rb "Your note here" "Your second optional note here"` on the command line and press enter.
+The next time the application is opened the note(s) will display face-up on the home screen in a table format.
+The notes are free-text and intended to be used similar to sticky notes, for examples, as a reminder to calculate a score for a particular patient.
+
+### Home Screen - Main Menu ###
+The home screen contains the main menu. To access a feature, type the number corresponding to the feature and press enter.
+
+### CHADS-VASc Calculator ###
+The calculator can be accessed by selecting option 1 from the main menu. The patient name is required for data storage and retrieval. The questions can be answered by selecting the correct answer from the list using the up and down arrows, or by typing "Y" or "N" and pressing enter. The data will be stored and able to be retrieved by using the result viewer option.
+
+### View CHADS-VASc Results ###
+Results from a previous calculation can be viewed by selecting option 2 from the main menu. Type the patient's full name to view their CHADS-VASc result. 
+
+### View anticoagulant drug list ###
+This option can be accessed by selecting option 3 from the main menu. A list of recommended anticoagulant medications and corresponding doses will display in a table format.
+
+### Add an anticoagulant medication for a patient ###
+To add an anticoagulant medication to a patient's record, select option 4 from the main menu. After entering the patient's full name and the medication details, the updated CHADS-VASc record with the medication details will display on the screen.
+
+## Error Messages ##
+**Invalid selection!**
+This error message may be encountered on the home screen. If an option other than numbers 1 to 5 is selected the "Invalid Selection!" error message will display.
+
+**Error: Unable to save results. Continue anyway?**  
+This error may be encountered when using the CHADS-VASc calculator (option 1). The system is unable to locate the file to save the CHADS-VASc calculator results.
+The calculator will still calculate a result correctly but the information is unable to be saved.    
+
+**Patient not found**  
+This error may be encountered when attempting to view a CHADS-VASc result (option 2). If no results are recorded for the selected patient or if the patient's name is incorrect the system will display a "Patient not found" error message. 
+
+**Something went wrong! This program will terminate. Please contact helpdesk for advice.**  
+This error message will display for all other errors. Some possible causes may be due to a corrupt data file or an issue external to the AF-Helper application which prevents it from running correctly. If this error is encountered the application will close. It may be executed again after the issue is resolved.  
+
+# T1A2-12 Manual Testing #
+[Manual Test Script with Results](./documentation/nhan-dang-T1A2—12-manual-testing.xlsx)
+
+# T1A2-13 Source Control #
+[Terminal App GitHub Repository](https://github.com/indianbread/af-helper-terminal-app)
+
+# T1A2-14 Project Management Platform #
+Screenshots of Trello board included in Implementation Plan:  
+[Implementation Plan](./documentation/nhan-dang-T1A2-6-implementation-plan.xlsx)
+
+# T1A2-15 Automation #
+[Code for testing automation](./automated-testing.rb)
+
+
+
+
+
 
 
 
