@@ -17,6 +17,8 @@ puts font.write('AF-Helper')
 
 puts 'Hi Doc! I am your cardiovascular companion, the atrial fibrillation helper!'.colorize(:black).colorize(background: :yellow)
 puts "\r\r"
+puts "To add On-The-Fly notes type " + "ruby af-helper.rb \"your note here\" ".colorize(:yellow) + "in the terminal without launching the AF-Helper application."
+puts "\r\r"
 notes_log = []
 def add_notes(notes_log)
   notes_log << ARGV
