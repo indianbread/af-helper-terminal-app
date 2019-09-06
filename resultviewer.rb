@@ -2,6 +2,7 @@
 
 require 'CSV'
 require_relative 'patient-class.rb'
+# require 'pry'
 
 def loadpatient(patientname)
   csv_text = File.open('cvresult.csv', 'r')
@@ -21,10 +22,22 @@ def loadpatient(patientname)
     vascular = row_data['Vascular_Disease_History']
     diabetes = row_data['Diabetes_History']
     cvscore = row_data['CV_Score'].to_i
+    medication = ''
+    patient1 = Patient.new(date, patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore, medication)
+    # binding.pry
+  end
+  csv_text2 = File.open('patientmed.csv', 'r')
+  csv2 = CSV.parse(csv_text2, headers: true)
+  csv2.each do |row|
+    row_data2 = row.to_hash
+    next unless row_data2['Name'] == patientname
 
-    patient1 = Patient.new(date, patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore)
+    medication = row_data2['Medication']
+    patient1.medication=(medication)
+    # binding.pry
   end
   patient1
+  # binding.pry
 end
 
 def resultviewer(patientname)

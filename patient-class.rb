@@ -4,7 +4,7 @@ require 'Date'
 require_relative 'resultviewer.rb'
 
 class Patient
-  def initialize(date, patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore)
+  def initialize(date, patientname, agegroup, gender, chf, hypertension, stroke, vascular, diabetes, cvscore, medication)
     @date = date
     @patientname = patientname
     @agegroup = agegroup
@@ -15,7 +15,7 @@ class Patient
     @vascular = vascular
     @diabetes = diabetes
     @cvscore = cvscore
-    @medication = []
+    @medication = medication
   end
 
   def viewresult
@@ -33,7 +33,16 @@ class Patient
 end
 
   def medication=(medication)
-    @medication << medication
+    med_arr = []
+    @medication = medication
+    result_med = { name: @patientname,
+                   medication: @medication }
+    med_arr << result_med
+    CSV.open('patientmed.csv', 'a') do |csv|
+      med_arr.each do |hash|
+        csv << hash.values
+      end
+    end
     @medication
   end
 end

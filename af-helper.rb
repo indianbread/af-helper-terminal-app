@@ -17,7 +17,7 @@ puts font.write('AF-Helper')
 
 puts 'Hi Doc! I am your cardiovascular companion, the atrial fibrillation helper!'.colorize(:black).colorize(background: :yellow)
 puts "\r\r"
-puts "To add On-The-Fly notes type " + "ruby af-helper.rb \"your note here\" ".colorize(:yellow) + "in the terminal without launching the AF-Helper application."
+puts 'To add On-The-Fly notes type ' + 'ruby af-helper.rb "your note here" '.colorize(:yellow) + 'in the terminal without launching the AF-Helper application.'
 puts "\r\r"
 notes_log = []
 def add_notes(notes_log)
@@ -31,7 +31,7 @@ puts table
 puts "\r\r"
 puts 'Select from the following options below:'
 begin
-loop do
+  loop do
     puts '1. CHADS-VASc calculator'
     puts '2. View CHADS-VASc results for a patient'
     puts '3. View anticoagulant drug list'
@@ -45,10 +45,7 @@ loop do
     if selection == 1
       chadsvascscore = chadsvasccalc
       # binding.pry
-      if chadsvascscore != nil
-      chadsvasceval(chadsvascscore)
-      else
-      end
+      chadsvasceval(chadsvascscore) unless chadsvascscore.nil?
 
     elsif selection == 2
       puts "Enter the patient's name to view results"
@@ -81,8 +78,8 @@ loop do
     else
       break
       end
-  rescue => error_object
-    puts 'Something went wrong! This program will terminate. Please contact helpdesk for advice.'.colorize(:red).colorize(background: :white)
-    break
+    rescue => error_object
+      puts 'Something went wrong! This program will terminate. Please contact helpdesk for advice.'.colorize(:red).colorize(background: :white)
+      break
   end
 end

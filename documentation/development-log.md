@@ -30,5 +30,10 @@ I was mindful of including different error messages for the different scenarios,
 Some of the bugs were identified as I was executing the manual testing plan. I picked up another error when briefly testing the add medication method but due to time constraints I will not address this error yet. I may go back to the code and fix this error after I complete the required documentation components.
 I have run the rubocop gem to fix the styling of the code.
 
+# Friday 6th September, 2019 #
+I have implemented the final feature, which is the ability to add a medication for a patient and write this to file.
+I accomplished this by writing the medication to a different file. 
+I have not tested the possibility of what will happen if I add a medication for the same patient more than once due to time constraints.
+
 
 

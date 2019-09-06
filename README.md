@@ -85,14 +85,19 @@ Rubocop gem used for code styling and convention
 
 ### MAC OS: ###
 1. Open Terminal
-2. In the command line, execute the build.sh file by typing `./build.sh`
-3. Run the AF-Helper application by typing `ruby af-helper.rb` in the command line
+2. Clone the [Github repository](https://github.com/indianbread/af-helper-terminal-app) `git clone <url>`
+3. `cd` into the directory where the repository was cloned to
+4. In the command line, execute the [build.sh](./build.sh) file by typing `./build.sh`
+5. Run the AF-Helper application by typing `ruby af-helper.rb` in the command line
 
 ## Dependencies ##
 Your computer must have the following installed:
 
-* [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
-* [The following Ruby gems:](https://rubygems.org/) which are included in the build file
+* [Ruby](https://www.ruby-lang.org/en/documentation/installation/)  
+ Suggested installation steps:  
+    * First, install `Homebrew`
+    * Then use Homebrew to install `rbenv`
+* The following [Ruby gems:](https://rubygems.org/) which are included in the build file
     * Colorize
     * Terminal-Table
     * TTY-Prompt
@@ -100,6 +105,7 @@ Your computer must have the following installed:
 
 ## Features ##
 
+![homescreen](./documentation/homescreen.PNG)
 ### On-The-Fly Notes ###
 These notes can be added directly on the command line without opening the AF-Helper application itself.
 To add a note, type `ruby af-helper.rb "Your note here" "Your second optional note here"` on the command line and press enter.
