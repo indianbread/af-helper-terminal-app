@@ -59,12 +59,16 @@ begin
       puts 'Enter patient name'
       patientname = STDIN.gets.chomp.downcase
       patient = loadpatient(patientname)
+      if patient.nil?
+        puts 'Patient not found.'
+      else
       puts 'Enter drug and dose'
       medication = STDIN.gets.chomp
       patient.medication = medication
       puts "Medication has been added to patient's record".colorize(:blue).colorize(background: :white)
       puts
       patient.viewresult
+      end
 
     elsif selection == 5
       exit

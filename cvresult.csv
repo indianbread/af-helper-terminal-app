@@ -9,3 +9,6 @@ Result_Id,Date,Name,Age_Range,Gender,CHF,Hypertension,Stroke_History,Vascular_Di
 1,2019-09-06 09:24:40 +1000,ellen degeneres,<65,Female,false,false,false,false,false,1
 1,2019-09-06 10:38:02 +1000,stan lee,>75,Male,true,true,false,false,false,4
 1,2019-09-06 10:51:09 +1000,helen go,>75,Female,false,false,false,false,true,4
+1,2019-09-06 12:13:59 +1000,lily pilly,65-74,Female,false,false,false,false,false,2
+1,2019-09-06 12:14:22 +1000,kurt russell,<65,Male,false,false,false,false,false,0
+1,2019-09-06 12:14:49 +1000,harry potter,<65,Male,false,true,false,false,false,1
